@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <title>วงล้อสุ่มสี</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wheel-container">
+      <!-- Header for wheel -->
+      <div class="wheel-header">
+        <h1><b>20-30 ชาย</b></h1>
+      </div>
+
+      <!-- Wheel itself -->
+      <div class="wheel" id="wheel1">
+        <div class="wheel-section green"></div>
+        <div class="wheel-section orange"></div>
+        <div class="wheel-section pink"></div>
+        <div class="wheel-section blue"></div>
+        <div class="needle"></div>
+        <!-- เข็มชี้ -->
+      </div>
+
+      <!-- Input and button to enter password -->
+      <div id="login-section1">
+        <input
+          class="password-input"
+          type="text"
+          id="password1"
+          placeholder="กรอกรหัสผ่าน"
+        />
+      </div>
+      <div id="shirt-size-section1">
+        <label for="shirtSize1" class="dropdown-label"></label>
+        <select
+          id="shirtSize1"
+          class="shirt-size-dropdown"
+          style="margin-top: 10px"
+        >
+          <option value="เลือกขนาดเสื้อ">เลือกขนาดเสื้อ</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+      </div>
+      <button
+        style="width: 115px; margin-top: 10px"
+        type="button"
+        class="btn btn-outline-success"
+        onclick="checkPassword('wheel1')"
+      >
+        ยืนยัน
+      </button>
+      <p id="message1" style="color: red"></p>
+      <!-- Spin Button -->
+      <button
+        id="spinBtn1"
+        class="spin-btn"
+        onclick="spinWheel('wheel1')"
+        disabled
+      >
+        หมุนวงล้อ 1
+      </button>
+    </div>
+
+    <div class="wheel-container">
+      <!-- Header for wheel -->
+      <div class="wheel-header">
+        <h1><b>31-40 ชาย</b></h1>
+      </div>
+
+      <!-- Wheel itself -->
+      <div class="wheel" id="wheel2">
+        <div class="wheel-section green"></div>
+        <div class="wheel-section orange"></div>
+        <div class="wheel-section pink"></div>
+        <div class="wheel-section blue"></div>
+        <div class="needle"></div>
+        <!-- เข็มชี้ -->
+      </div>
+
+      <!-- Input and button to enter password -->
+      <div id="login-section2">
+        <input
+          class="password-input"
+          type="text"
+          id="password2"
+          placeholder="กรอกรหัสผ่าน"
+        />
+      </div>
+      <div id="shirt-size-section1">
+        <label for="shirtSize1" class="dropdown-label"></label>
+        <select
+          id="shirtSize2"
+          class="shirt-size-dropdown"
+          style="margin-top: 10px"
+        >
+          <option value="เลือกขนาดเสื้อ">เลือกขนาดเสื้อ</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+      </div>
+      <button
+        style="width: 115px; margin-top: 10px"
+        type="button"
+        class="btn btn-outline-success"
+        onclick="checkPassword('wheel2')"
+      >
+        ยืนยัน
+      </button>
+      <p id="message2" style="color: red"></p>
+      <!-- Spin Button -->
+      <button
+        id="spinBtn2"
+        class="spin-btn"
+        onclick="spinWheel('wheel2')"
+        disabled
+      >
+        หมุนวงล้อ 2
+      </button>
+    </div>
+
+    <div class="wheel-container">
+      <!-- Header for wheel -->
+      <div class="wheel-header">
+        <h1><b>41-50 ชาย</b></h1>
+      </div>
+
+      <!-- Wheel itself -->
+      <div class="wheel" id="wheel3">
+        <div class="wheel-section green"></div>
+        <div class="wheel-section orange"></div>
+        <div class="wheel-section pink"></div>
+        <div class="wheel-section blue"></div>
+        <div class="needle"></div>
+        <!-- เข็มชี้ -->
+      </div>
+
+      <!-- Input and button to enter password -->
+      <div id="login-section3">
+        <input
+          class="password-input"
+          type="text"
+          id="password3"
+          placeholder="กรอกรหัสผ่าน"
+        />
+      </div>
+      <div id="shirt-size-section1">
+        <label for="shirtSize1" class="dropdown-label"></label>
+        <select
+          id="shirtSize3"
+          class="shirt-size-dropdown"
+          style="margin-top: 10px"
+        >
+          <option value="เลือกขนาดเสื้อ">เลือกขนาดเสื้อ</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+      </div>
+      <button
+        style="width: 115px; margin-top: 10px"
+        type="button"
+        class="btn btn-outline-success"
+        onclick="checkPassword('wheel3')"
+      >
+        ยืนยัน
+      </button>
+      <p id="message3" style="color: red"></p>
+      <!-- Spin Button -->
+      <button
+        id="spinBtn3"
+        class="spin-btn"
+        onclick="spinWheel('wheel3')"
+        disabled
+      >
+        หมุนวงล้อ 3
+      </button>
+    </div>
+
+    <div class="wheel-container">
+      <!-- Header for wheel -->
+      <div class="wheel-header">
+        <h1><b>51-55 ชาย</b></h1>
+      </div>
+
+      <!-- Wheel itself -->
+      <div class="wheel" id="wheel4">
+        <div class="wheel-section green"></div>
+        <div class="wheel-section orange"></div>
+        <div class="wheel-section pink"></div>
+        <div class="wheel-section blue"></div>
+        <div class="needle"></div>
+        <!-- เข็มชี้ -->
+      </div>
+
+      <!-- Input and button to enter password -->
+      <div id="login-section4">
+        <input
+          class="password-input"
+          type="text"
+          id="password4"
+          placeholder="กรอกรหัสผ่าน"
+        />
+      </div>
+      <div id="shirt-size-section4">
+        <label for="shirtSize1" class="dropdown-label"></label>
+        <select
+          id="shirtSize4"
+          class="shirt-size-dropdown"
+          style="margin-top: 10px"
+        >
+          <option value="เลือกขนาดเสื้อ">เลือกขนาดเสื้อ</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+      </div>
+      <button
+        style="width: 115px; margin-top: 10px"
+        type="button"
+        class="btn btn-outline-success"
+        onclick="checkPassword('wheel4')"
+      >
+        ยืนยัน
+      </button>
+      <p id="message4" style="color: red"></p>
+      <!-- Spin Button -->
+      <button
+        id="spinBtn4"
+        class="spin-btn"
+        onclick="spinWheel('wheel4')"
+        disabled
+      >
+        หมุนวงล้อ 3
+      </button>
+    </div>
+
+    <table id="resultTable">
+      <thead>
+        <tr>
+          <th>ลำดับ</th>
+          <th>รหัสพนักงาน</th>
+          <th>สีที่ได้</th>
+          <th>ขนาดเสื้อ</th>
+          <th>วงล้อ</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+  <button
+    type="button"
+    class="btn btn-outline-info"
+    onclick="exportTableToExcel()"
+  >
+    📥 ดาวน์โหลด Excel
+  </button>
+</html>
+
+<style>
+  /* ขอบตารางและพื้นหลัง */
+  #resultTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  /* กำหนดขอบของแต่ละเซลล์ */
+  #resultTable th,
+  #resultTable td {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* สีพื้นหลังของ header */
+  #resultTable thead {
+    background-color: #4caf50;
+    color: white;
+  }
+
+  /* สีพื้นหลังเมื่อ hover ไปที่ row */
+  #resultTable tbody tr:hover {
+    background-color: #f2f2f2;
+  }
+
+  /* กำหนด font และ style ของ table */
+  #resultTable th {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  #resultTable td {
+    font-size: 14px;
+  }
+
+  /* กำหนดการทำงานของ scrollbar เมื่อ table ใหญ่เกินไป */
+  #resultTable {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* ปรับปรุงสีพื้นหลังและเส้นขอบของแต่ละ row */
+  #resultTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  #resultTable tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  body {
+    background-color: #ffecf2;
+    font-family: "Arial", sans-serif;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .wheel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f3cedb;
+    border: 2px solid #ff8cd3;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .wheel-header {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .wheel {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+    transform-origin: center;
+    transition: transform 1s ease-out;
+  }
+
+  .wheel-section {
+    width: 50%;
+    height: 50%;
+  }
+
+  .green {
+    background-color: rgb(0, 243, 0);
+  }
+  .orange {
+    background-color: rgb(247, 162, 4);
+  }
+  .pink {
+    background-color: rgb(241, 145, 161);
+  }
+  .blue {
+    background-color: rgb(3, 3, 248);
+  }
+
+  .needle {
+    position: absolute;
+    top: 50%;
+    left: 500%;
+    width: 10px;
+    height: 20px;
+    background-color: #3d3d3d; /* สีของเข็ม */
+    transform: translate(-50%, -610%); /* วางเข็มให้ตรงกลางบนวงล้อ */
+    transform: rotate(0deg); /* เข็มไม่หมุน */
+  }
+
+  .spin-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff8cd3;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  .spin-btn:hover {
+    background-color: #ff6ba2;
+  }
+
+  /* การหมุนวงล้อเร็วๆ */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .wheel.spinning {
+    animation: spin 0.5s ease-out; /* ปรับเวลาเป็น 0.5 วินาที เพื่อหมุนเร็ว */
+  }
+  /* สไตล์สำหรับข้อความแจ้งเตือน */
+  .message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f44336; /* สีพื้นหลัง */
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    text-align: center;
+    animation: slideIn 0.5s ease-out;
+  }
+
+  /* เพิ่มสีสำหรับประเภทต่างๆ */
+  .message.error {
+    background-color: #f44336; /* สีแดงสำหรับข้อผิดพลาด */
+  }
+
+  .message.success {
+    font-size: 30px;
+    background-color: #4caf50; /* สีเขียวสำหรับสำเร็จ */
+  }
+
+  .message.warning {
+    font-size: 30px;
+    background-color: #ff9800; /* สีส้มสำหรับคำเตือน */
+  }
+
+  .message.info {
+    font-size: 30px;
+    background-color: #2196f3; /* สีน้ำเงินสำหรับข้อมูลทั่วไป */
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-50%) translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  }
+  /* สำหรับ dropdown list ขนาดเสื้อ */
+  .dropdown-label {
+    font-size: 16px;
+    font-weight: bold;
+
+    color: #333;
+  }
+
+  .shirt-size-dropdown {
+    width: 200px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid #ff8cd3;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+  }
+
+  .shirt-size-dropdown:focus {
+    border-color: #ff6ba2;
+    outline: none;
+  }
+  /* สไตล์สำหรับ input password */
+  .password-input {
+    width: 100%;
+    max-width: 200px; /* ขนาดความกว้างสูงสุด */
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: "Arial", sans-serif;
+    border: 2px solid #ff8cd3;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+
+  .password-input::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+
+  .password-input:focus {
+    outline: none;
+    border-color: #ff6ba2; /* สีของขอบเมื่อมีการโฟกัส */
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(255, 106, 162, 0.6); /* เงารอบขอบเมื่อโฟกัส */
+  }
+
+  /* ปรับให้ปุ่มมองดูสะอาด */
+  .password-input[type="password"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+</style>
+
+<script>
+  const wheelPermissions = {
+    wheel1: [
+      "10534",
+      "10553",
+      "10572",
+      "10586",
+      "10589",
+      "10592",
+      "10609",
+      "10616",
+      "10622",
+      "10627",
+      "10640",
+      "10642",
+      "10643",
+      "10646",
+      "10647",
+      "10648",
+      "10649",
+      "10650",
+      "10676",
+      "10683",
+      "10699",
+      "10700",
+      "10704",
+      "10709",
+      "10711",
+      "10713",
+      "10715",
+      "10719",
+      "10720",
+      "10722",
+      "10724",
+      "10727",
+      "10728",
+      "10729",
+      "10732",
+      "10735",
+      "10738",
+      "10740",
+      "10742",
+      "10744",
+      "10748",
+      "10750",
+      "10752",
+      "10754",
+      "10755",
+      "10757",
+      "10758",
+      "10759",
+      "10763",
+      "10765",
+      "10766",
+      "10767",
+      "10768",
+      "10769",
+      "10770",
+      "10771",
+      "10774",
+      "10775",
+      "10777",
+      "10778",
+      "10784",
+      "10790",
+      "10792",
+      "10796",
+      "10797",
+      "10798",
+      "10801",
+      "10804",
+      "10812",
+      "10817",
+      "10818",
+      "10819",
+      "10821",
+      "10824",
+      "10828",
+      "10834",
+      "10835",
+      "10837",
+      "10844",
+      "10846",
+      "10847",
+      "10849",
+      "10851",
+      "10854",
+      "10856",
+      "10857",
+      "10859",
+      "10861",
+      "10863",
+      "10865",
+      "10867",
+      "10868",
+      "10870",
+      "10871",
+      "10875",
+      "10876",
+      "10877",
+    ],
+    wheel2: [ "10316",
+            "10349",
+            "10354",
+            "10364",
+            "10378",
+            "10388",
+            "10410",
+            "10411",
+            "10425",
+            "10426",
+            "10437",
+            "10440",
+            "10443",
+            "10446",
+            "10450",
+            "10451",
+            "10452",
+            "10456",
+            "10459",
+            "10469",
+            "10473",
+            "10474",
+            "10475",
+            "10477",
+            "10480",
+            "10482",
+            "10483",
+            "10495",
+            "10498",
+            "10503",
+            "10505",
+            "10515",
+            "10516",
+            "10520",
+            "10523",
+            "10524",
+            "10527",
+            "10528",
+            "10531",
+            "10535",
+            "10536",
+            "10540",
+            "10541",
+            "10543",
+            "10546",
+            "10547",
+            "10557",
+            "10559",
+            "10564",
+            "10566",
+            "10567",
+            "10569",
+            "10573",
+            "10578",
+            "10580",
+            "10581",
+            "10585",
+            "10588",
+            "10597",
+            "10598",
+            "10601",
+            "10602",
+            "10603",
+            "10607",
+            "10628",
+            "10644",
+            "10652",
+            "10653",
+            "10670",
+            "10672",
+            "10678",
+            "10684",
+            "10692",
+            "10693",
+            "10695",
+            "10703",
+            "10712",
+            "10726",
+            "10737",
+            "10743",
+            "10746",
+            "10749",
+            "10751",
+            "10764",
+            "10773",
+            "10776",
+            "10791",
+            "10810",
+            "10814",
+            "10829",
+            "10836",
+            "10845",
+            "10855",
+            "10858",
+            "10866",
+            "10869",
+],
+    wheel3: [ "10047",
+            "10058",
+            "10064",
+            "10066",
+            "10068",
+            "10080",
+            "10083",
+            "10088",
+            "10097",
+            "10099",
+            "10100",
+            "10105",
+            "10106",
+            "10113",
+            "10118",
+            "10132",
+            "10136",
+            "10166",
+            "10171",
+            "10178",
+            "10181",
+            "10182",
+            "10191",
+            "10201",
+            "10207",
+            "10212",
+            "10214",
+            "10224",
+            "10238",
+            "10239",
+            "10241",
+            "10243",
+            "10244",
+            "10250",
+            "10258",
+            "10260",
+            "10266",
+            "10267",
+            "10274",
+            "10279",
+            "10282",
+            "10286",
+            "10299",
+            "10300",
+            "10319",
+            "10330",
+            "10346",
+            "10347",
+            "10368",
+            "10371",
+            "10376",
+            "10381",
+            "10385",
+            "10400",
+            "10406",
+            "10407",
+            "10413",
+            "10428",
+            "10431",
+            "10433",
+            "10457",
+            "10463",
+            "10466",
+            "10510",
+            "10517",
+            "10525",
+            "10532",
+            "10545",
+            "10550",
+            "10554",
+            "10558",
+            "10565",
+            "10575",
+            "10590",
+            "10615",
+            "10654",
+            "10658",
+            "10661",
+            "10666",
+            "10668",
+            "10669",
+            "10680",
+            "10682",
+            "10823",
+],
+    wheel4: [ "10063",
+            "10077",
+            "10079",
+            "10084",
+            "10095",
+            "10101",
+            "10110",
+            "10165",
+            "10168",
+            "10170",
+            "10172",
+            "10183",
+            "10196",
+            "10197",
+            "10199",
+            "10209",
+            "10211",
+            "10216",
+            "10237",
+            "10261",
+            "10276",
+            "10343",
+            "10350",
+            "10374",
+            "10401",
+            "10427",
+            "10476",
+            "10657",
+            "Pratuan",
+            "Tinnakorn",],
+  };
+
+  const spinHistory = {}; // บันทึกรหัสที่เคยหมุน
+
+  // ฟังก์ชันตรวจสอบรหัส
+  function checkPassword(wheelId) {
+    const num = wheelId.slice(-1);
+    const password = document.getElementById(`password${num}`).value;
+    const message = document.getElementById(`message${num}`);
+
+    // ตรวจสอบว่าผู้ใช้กรอกรหัสหรือไม่
+    if (password === "") {
+      showMessage("กรุณากรอกรหัสพนักงาน", "warning");
+      return;
+    }
+
+    // ตรวจสอบว่ารหัสนี้เคยใช้แล้วหรือยัง
+    if (localStorage.getItem(`usedPassword_${password}`)) {
+      showMessage("คุณได้ใช้รหัสนี้ไปแล้ว ไม่สามารถใช้ได้อีก", "error");
+      return;
+    }
+
+    // ตรวจสอบสิทธิ์ของรหัส
+    if (!wheelPermissions[wheelId].includes(password)) {
+      showMessage("รหัสพนักงานไม่ถูกต้อง หรือไม่มีสิทธิ์หมุนวงล้อนี้", "error");
+      return;
+    }
+
+    // บันทึกว่ารหัสนี้ได้ถูกใช้แล้ว
+    localStorage.setItem(`usedPassword_${password}`, "true");
+
+    // การเปิดปุ่มหมุนวงล้อ
+    message.textContent = "";
+    document.getElementById(`spinBtn${num}`).disabled = false;
+    spinHistory[password] = false; // บันทึกว่าใช้รหัสนี้แล้ว
+  }
+
+  // ฟังก์ชันหมุนวงล้อ
+  // ฟังก์ชันหมุนวงล้อ
+function spinWheel(wheelId) {
+  const num = wheelId.slice(-1); // ดึงเลขวงล้อ เช่น wheel1 -> 1
+  const password = document.getElementById(`password${num}`).value.trim();
+  const shirtSize = document.getElementById(`shirtSize${num}`).value;
+  const message = document.getElementById(`message${num}`);
+
+  // ตรวจสอบว่ากรอกครบหรือยัง
+  if (!password || shirtSize === "เลือกขนาดเสื้อ") {
+    message.textContent = "⚠️ กรุณากรอกรหัสพนักงานและเลือกขนาดเสื้อให้ครบ";
+    message.style.color = "red";
+    message.style.visibility = "visible"; // แสดงกรอบข้อความ
+    return;
+  }
+
+  if (spinHistory[password] === true) {
+    message.textContent = "❗️คุณหมุนวงล้อนี้ไปแล้ว (ใช้รหัสเดิมไม่ได้)";
+    message.style.color = "orange";
+    message.style.visibility = "visible"; // แสดงกรอบข้อความ
+    return;
+  }
+
+  const wheel = document.getElementById(wheelId);
+  const randomDeg = Math.floor(Math.random() * 360) + 3600; // หมุน 3600–3960 องศา (10 รอบ + ลุ้นนิด ๆ)
+
+  // รีเซ็ต transition ให้กลับสู่ค่าเริ่มต้นทุกครั้ง
+  wheel.style.transition = "none"; // รีเซ็ตการเปลี่ยนแปลงการหมุน
+  wheel.style.transform = `rotate(${randomDeg}deg)`; // หมุนทันทีโดยไม่มีการหน่วงเวลา
+
+  // ใช้ setTimeout เพื่อเริ่ม transition ใหม่หลังจากรีเซ็ต
+  setTimeout(() => {
+    wheel.style.transition = "transform 2s ease-out"; // ทำให้การหมุนเร็วขึ้นที่ 2 วินาที
+    wheel.style.transform = `rotate(${randomDeg + 360}deg)`; // หมุนโดยมีการ transition
+
+    const color = getColorFromRotation(randomDeg); // ฟังก์ชันนี้จะได้สีที่สุ่ม
+
+    // ตรวจสอบว่าแต่ละสีมีรหัสครบ 5 รหัสหรือยัง
+    if (colorHistory[color] >= MAX_EMPLOYEES_PER_COLOR) {
+      message.textContent = `❗️สี ${color} หมุนได้ครบ 5 รหัสแล้ว, กำลังสุ่มสีอื่น`;
+      message.style.color = "orange";
+      message.style.fontWeight = "bold";
+      message.style.fontSize = "16px";
+      message.style.backgroundColor = "#fff3e0"; // พื้นหลังสีอ่อน
+      message.style.padding = "10px";
+      message.style.borderRadius = "5px";
+      message.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.1)";
+      message.style.textAlign = "center"; // จัดข้อความให้ตรงกลาง
+      message.style.border = "2px solid orange"; // ขอบที่เด่นชัด
+      message.style.visibility = "visible"; // แสดงกรอบข้อความ
+
+      // หากสีที่ได้มีครบ 5 รหัสแล้ว, สุ่มสีใหม่
+      let newColor;
+      do {
+        const newRandomDeg = Math.floor(Math.random() * 360) + 3600;
+        newColor = getColorFromRotation(newRandomDeg);
+      } while (colorHistory[newColor] >= MAX_EMPLOYEES_PER_COLOR);
+
+      // หลังหมุนเสร็จ
+      setTimeout(() => {
+        message.textContent = `🎉 คุณได้สี: ${newColor}, ขนาดเสื้อ: ${shirtSize}`;
+        message.style.color = "green";
+        message.style.fontWeight = "bold"; // ข้อความหนา
+        message.style.fontSize = "18px"; // ขนาดตัวอักษรที่ใหญ่ขึ้น
+        message.style.backgroundColor = "#e8f5e9"; // พื้นหลังสีเขียวอ่อน
+        message.style.padding = "10px"; // เพิ่มระยะห่างรอบๆ ข้อความ
+        message.style.borderRadius = "8px"; // ขอบมน
+        message.style.boxShadow = "0px 0px 15px rgba(0, 128, 0, 0.3)"; // เงารอบๆ ข้อความ
+        message.style.textAlign = "center"; // จัดข้อความให้ตรงกลาง
+        message.style.border = "2px solid green"; // ขอบที่สีเขียว
+        message.style.fontFamily = "Arial, sans-serif"; // ฟอนต์ที่ดูเรียบง่าย
+        message.style.visibility = "visible"; // แสดงกรอบข้อความ
+
+        // เพิ่มข้อมูลลงในตารางผลลัพธ์
+        addToResultTable(password, newColor, shirtSize, `วงล้อ ${num}`);
+
+        // เก็บข้อมูลในประวัติการหมุน
+        spinHistory[password] = true;
+        colorHistory[newColor]++; // เพิ่มจำนวนรหัสที่ใช้สำหรับสีใหม่
+
+        // ปิดปุ่มหมุน
+        document.getElementById(`spinBtn${num}`).disabled = true;
+
+        // หลังจากแสดงข้อความ 3 วินาที ให้ลบข้อความและกรอบ
+        setTimeout(() => {
+          message.textContent = ""; // ลบข้อความ
+          message.style.visibility = "hidden"; // ซ่อนกรอบ
+        }, 3000); // ลบหลัง 3 วินาที
+      }, 2000); // ตั้งเวลาหลังจากหมุนเสร็จ 2 วินาที
+
+      return;
+    }
+
+    // ถ้ายังไม่ครบ 5 รหัสสำหรับสีที่ได้
+    setTimeout(() => {
+      message.textContent = `🎉 คุณได้สี: ${color}, ขนาดเสื้อ: ${shirtSize}`;
+      message.style.color = "green";
+      message.style.fontWeight = "bold"; // ทำให้ตัวหนา
+      message.style.fontSize = "18px"; // ขนาดตัวอักษรใหญ่ขึ้น
+      message.style.backgroundColor = "#d4f8e0"; // พื้นหลังสีเขียวอ่อน
+      message.style.padding = "12px 20px"; // เพิ่มระยะห่างจากขอบ
+      message.style.borderRadius = "8px"; // มุมโค้งมน
+      message.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.2)"; // เงารอบข้อความ
+      message.style.textAlign = "center"; // จัดข้อความให้ตรงกลาง
+      message.style.border = "2px solid green"; // ขอบของข้อความเป็นสีเขียว
+      message.style.fontFamily = "Arial, sans-serif"; // ใช้ฟอนต์ที่อ่านง่าย
+      message.style.visibility = "visible"; // แสดงกรอบข้อความ
+
+      // เพิ่มข้อมูลลงในตารางผลลัพธ์
+      addToResultTable(password, color, shirtSize, `วงล้อ ${num}`);
+      spinHistory[password] = true;
+      colorHistory[color]++; // เพิ่มจำนวนรหัสที่ใช้สำหรับสีที่ได้
+      document.getElementById(`spinBtn${num}`).disabled = true;
+
+      // หลังจากแสดงข้อความ 3 วินาที ให้ลบข้อความและกรอบ
+      setTimeout(() => {
+        message.textContent = ""; // ลบข้อความ
+        message.style.visibility = "hidden"; // ซ่อนกรอบ
+      }, 3000); // ลบหลัง 3 วินาที
+    }, 2000);
+  }, 50); // เริ่ม transition หลังจาก 50ms
+}
+
+
+  function addToResultTable(password, color, shirtSize, wheel) {
+    // ตรวจสอบว่า localStorage มีข้อมูลเก่าหรือไม่
+    let resultData = JSON.parse(localStorage.getItem("resultData")) || [];
+
+    // เพิ่มข้อมูลใหม่เข้าไปใน array
+    resultData.push({
+      password: password,
+      color: color,
+      shirtSize: shirtSize,
+      wheel: wheel,
+    });
+
+    // บันทึกข้อมูลใหม่ลงใน localStorage
+    localStorage.setItem("resultData", JSON.stringify(resultData));
+
+    // แสดงข้อมูลในตาราง
+    displayResultTable(resultData);
+  }
+  function displayResultTable(resultData) {
+    const tableBody = document
+      .getElementById("resultTable")
+      .getElementsByTagName("tbody")[0];
+
+    // ลบแถวเก่าทั้งหมดก่อน
+    tableBody.innerHTML = "";
+
+    // เพิ่มข้อมูลใหม่ที่เก็บจาก localStorage ลงในตาราง
+    resultData.forEach((data, index) => {
+      const newRow = tableBody.insertRow();
+
+      newRow.insertCell(0).textContent = index + 1; // ลำดับ
+      newRow.insertCell(1).textContent = data.password; // รหัสพนักงาน
+      newRow.insertCell(2).textContent = data.color; // สีที่ได้
+      newRow.insertCell(3).textContent = data.shirtSize; // ขนาดเสื้อ
+      newRow.insertCell(4).textContent = data.wheel; // วงล้อ
+    });
+  }
+  window.onload = function () {
+    // โหลดข้อมูลจาก LocalStorage เมื่อหน้าเว็บถูกโหลด
+    const resultData = JSON.parse(localStorage.getItem("resultData")) || [];
+
+    // แสดงข้อมูลในตาราง
+    displayResultTable(resultData);
+  };
+
+  // ตัวแปรสำหรับเก็บข้อมูล
+  let spinResults = [];
+
+  function exportTableToExcel() {
+    const table = document.getElementById("resultTable");
+    const wb = XLSX.utils.table_to_book(table, { sheet: "ผลการสุ่ม" });
+    XLSX.writeFile(wb, "MEN.xlsx");
+  }
+
+  // ฟังก์ชันคำนวณสีจากการหมุน
+  let colorHistory = {
+    เขียว: 0,
+    ส้ม: 0,
+    ชมพู: 0,
+    น้ำเงิน: 0,
+  };
+  const MAX_EMPLOYEES_PER_COLOR = 7;
+
+  function getColorFromRotation(deg) {
+    const sections = ["เขียว", "ส้ม", "ชมพู", "น้ำเงิน"]; // สีที่มีในวงล้อ
+    const degPerSection = 360 / sections.length; // แต่ละสีครอบคลุมมุมกี่องศา
+
+    // หาค่ามุมที่หมุนถึงและคำนวณตำแหน่งสี
+    const colorIndex = Math.floor((deg % 360) / degPerSection);
+
+    return sections[colorIndex]; // คืนค่าชื่อสีที่ตรงกับตำแหน่ง
+  }
+
+ 
+
+  function showMessage(message, type) {
+    const messageEl = document.createElement("div");
+    messageEl.classList.add("message", type); // เพิ่มคลาสสำหรับข้อความและประเภทของข้อความ (error, success, etc.)
+    messageEl.textContent = message;
+    document.body.appendChild(messageEl);
+
+    setTimeout(() => {
+      messageEl.style.opacity = 0; // ค่อยๆ หายไป
+    }, 4000); // ทำให้หายไปหลังจาก 2 วินาที
+
+    setTimeout(() => {
+      messageEl.remove(); // ลบออกจาก DOM หลังจากหายไป
+    }, 4000); // ลบหลังจาก 2.5 วินาที (ต้องมากกว่าช่วงเวลา fade out)
+  }
+</script>
